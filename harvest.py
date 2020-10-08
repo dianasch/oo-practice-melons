@@ -21,7 +21,9 @@ class MelonType(object):
 
     def add_pairing(self, pairing):
         """Add a food pairing to the instance's pairings list."""
-        self.pairings.append(pairing)
+        for item in pairing:
+            self.pairings.append(item)
+        
         return self.pairings
 
         # Fill in the rest
@@ -35,14 +37,14 @@ class MelonType(object):
 
 muskmelon = MelonType("Muskmelon", "musk", 1998, "green", [], True, True)
 casaba = MelonType("Casaba", "cas", 2003, "orange", [], False, False)
-crewnshaw = MelonType("Crenshaw", "cren", 1996, "green", [], False, False)
+crenshaw = MelonType("Crenshaw", "cren", 1996, "green", [], False, False)
 yellow = MelonType("Yellow Watermelon", "yw", 2013, "yellow", [], False, True)
 
-muskmelon.add_pairing = "mint"
-casaba.add_pairing = "mint"
-casaba.add_pairing = "strawberries"
-crenshaw.add_pairing = "proscuitto"
-yellow.add_pairing = "ice cream"
+muskmelon.add_pairing = ["mint"]
+casaba.add_pairing = ["mint", "strawberries"]
+# casaba.add_pairing = ["strawberries"]
+crenshaw.add_pairing = ["proscuitto"]
+yellow.add_pairing = ["ice cream"]
 
 
 def make_melon_types():
@@ -65,6 +67,7 @@ def make_melon_types():
 
 def print_pairing_info(melon_types):
     """Prints information about each melon type's pairings."""
+    muskmelon_pairing = muskmelon.add_pairing
 
     # Fill in the rest
 
