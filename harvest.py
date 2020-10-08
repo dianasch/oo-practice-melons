@@ -35,16 +35,7 @@ class MelonType(object):
         # Fill in the rest
 
 
-muskmelon = MelonType("Muskmelon", "musk", 1998, "green", [], True, True)
-casaba = MelonType("Casaba", "cas", 2003, "orange", [], False, False)
-crenshaw = MelonType("Crenshaw", "cren", 1996, "green", [], False, False)
-yellow = MelonType("Yellow Watermelon", "yw", 2013, "yellow", [], False, True)
 
-muskmelon.add_pairing = ["mint"]
-casaba.add_pairing = ["mint", "strawberries"]
-# casaba.add_pairing = ["strawberries"]
-crenshaw.add_pairing = ["proscuitto"]
-yellow.add_pairing = ["ice cream"]
 
 
 def make_melon_types():
@@ -52,22 +43,41 @@ def make_melon_types():
 
     all_melon_types = []
 
-    # muskmelon = MelonType("Muskmelon", "musk", 1998, "green", [], True, True)
-    # casaba = MelonType("Casaba", "cas", 2003, "orange", [], False, False)
-    # crewnshaw = MelonType("Crenshaw", "cren", 1996, "green", [], False, False)
-    # yellow = MelonType("Yellow Watermelon", "yw", 2013, "yellow", [], False, True)
+    muskmelon = MelonType("Muskmelon", "musk", 1998, "green", [], True, True)
+    casaba = MelonType("Casaba", "cas", 2003, "orange", [], False, False)
+    crenshaw = MelonType("Crenshaw", "cren", 1996, "green", [], False, False)
+    yellow = MelonType("Yellow Watermelon", "yw", 2013, "yellow", [], False, True)
 
-    all_melon_types.append(muskmelon.name)
-    all_melon_types.append(casaba.name)
-    all_melon_types.append(crewnshaw.name)
-    all_melon_types.append(yellow.name)
+    muskmelon.add_pairing = ["mint"]
+    casaba.add_pairing = ["mint", "strawberries"]
+    crenshaw.add_pairing = ["proscuitto"]
+    yellow.add_pairing = ["ice cream"]
+
+    all_melon_types.append(muskmelon)
+    all_melon_types.append(casaba)
+    all_melon_types.append(crenshaw)
+    all_melon_types.append(yellow)
     # Fill in the rest
 
     return all_melon_types
 
 def print_pairing_info(melon_types):
     """Prints information about each melon type's pairings."""
-    muskmelon_pairing = muskmelon.add_pairing
+
+
+
+    for melon in make_melon_types():
+
+        name = melon.name
+
+        pairing = melon.add_pairing
+
+        for item in pairing:
+
+            print(f"""{name} pairs with:
+            -{item}""")
+        
+
 
     # Fill in the rest
 
