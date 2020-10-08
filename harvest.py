@@ -6,12 +6,11 @@
 class MelonType(object):
     """A species of melon at a melon farm."""
 
-    def __init__(self, code, first_harvest, color, pairings, is_seedless, is_bestseller, 
-                 name):
+    def __init__(self, name, code, first_harvest, color, pairings, is_seedless, is_bestseller):
         """Initialize a melon."""
 
-
-        self.code = new_code
+        self.name = name
+        self.code = code
         self.first_harvest = first_harvest
         self.color = color
         self.pairings = []
@@ -22,7 +21,7 @@ class MelonType(object):
 
     def add_pairing(self, pairing):
         """Add a food pairing to the instance's pairings list."""
-        self.pairings = self.pairings.append(pairing)
+        self.pairings.append(pairing)
         return self.pairings
 
         # Fill in the rest
@@ -34,15 +33,32 @@ class MelonType(object):
         # Fill in the rest
 
 
+muskmelon = MelonType("Muskmelon", "musk", 1998, "green", [], True, True)
+casaba = MelonType("Casaba", "cas", 2003, "orange", [], False, False)
+crewnshaw = MelonType("Crenshaw", "cren", 1996, "green", [], False, False)
+yellow = MelonType("Yellow Watermelon", "yw", 2013, "yellow", [], False, True)
+
+muskmelon.add_pairing = "mint"
+casaba.add_pairing = "mint"
+casaba.add_pairing = "strawberries"
+crenshaw.add_pairing = "proscuitto"
+yellow.add_pairing = "ice cream"
+
+
 def make_melon_types():
     """Returns a list of current melon types."""
 
     all_melon_types = []
 
-    all_melon_types.append(MelonType(muskmelon, "Muskmelon", "musk", 1998, "green", muskmelon.add_pairing("mint"), True, True)) 
-    all_melon_types.append(MelonType(casaba, "Casaba", "cas", 2003, "orange", casaba.add_pairing("straberries", "mint"), False, False ))   
-    all_melon_types.append(MelonType(crewnshaw, "Crenshaw", "cren", 1996, "green", crenshaw.add_pairing("prosciutto"), False, False))   
-    all_melon_types.append(MelonType(yellow, "Yellow Watermelon", "yw", 2013, "yellow", yellow.add_pairing("ice cream"), False, True))
+    # muskmelon = MelonType("Muskmelon", "musk", 1998, "green", [], True, True)
+    # casaba = MelonType("Casaba", "cas", 2003, "orange", [], False, False)
+    # crewnshaw = MelonType("Crenshaw", "cren", 1996, "green", [], False, False)
+    # yellow = MelonType("Yellow Watermelon", "yw", 2013, "yellow", [], False, True)
+
+    all_melon_types.append(muskmelon.name)
+    all_melon_types.append(casaba.name)
+    all_melon_types.append(crewnshaw.name)
+    all_melon_types.append(yellow.name)
     # Fill in the rest
 
     return all_melon_types
